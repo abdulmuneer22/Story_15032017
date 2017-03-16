@@ -4,7 +4,8 @@ export const TableData = [
         "downloadable": "Downloadable",
         "content": "Content",
         "modified_on": "Modified On",
-        "modified_by": "Modified By"
+        "modified_by": "Modified By",
+        "header" : true
     },
 
 

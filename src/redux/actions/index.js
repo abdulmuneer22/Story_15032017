@@ -6,3 +6,14 @@ export const UpdateCount = () => {
     }
 }
 
+
+export const SelectRow = (row_id,state) => {
+console.log(row_id)
+console.log(state)
+
+return {
+    type : 'SELECT_ROW',
+    payload : {row_id : row_id , status : state}
+}
+}
+

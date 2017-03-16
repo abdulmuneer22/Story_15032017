@@ -4,25 +4,27 @@ import SingleRow from './SingleRow'
 
 var Data = require('./TableData')
 
-
+import Pagination from './Pagination'
 
 class Table extends Component {
     render() {
         // console.log(Data)
         return (
             <div style={{
-                width : '90%',
-                marginLeft : 'auto',
-                marginRight : 'auto',
-                marginTop : 30
+                width: '90%',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                marginTop: 30
             }}>
 
-                {   
-                    Data.TableData.map((item,i)=>{
-                        return(
-                        <SingleRow key={i} Data={item} id={i}/>
+                <Pagination />
+
+                {
+                    Data.TableData.map((item, i) => {
+                        return (
+                            <SingleRow key={i} Data={item} id={i} />
                         )
-                    })                    
+                    })
                 }
             </div>
         );
