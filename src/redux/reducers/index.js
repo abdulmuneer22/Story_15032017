@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
-import CountReducer from './CountReducer'
-
+import PaginationCount from './PaginationCount'
 
 export default combineReducers({
-   Count : CountReducer
+   PaginationCount : PaginationCount
 });

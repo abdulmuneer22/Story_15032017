@@ -26,9 +26,9 @@ class PageSwitch extends Component{
                 //padding : 10
             }}>
                 {
-                    PaginationItems.map((item)=>{
+                    PaginationItems.map((item,i)=>{
                         return(
-                            <OnePage pagenumber={item}/>
+                            <OnePage pagenumber={item} key={i}/>
                         )
                     })
                 }

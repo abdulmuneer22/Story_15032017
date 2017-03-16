@@ -17,3 +17,12 @@ return {
 }
 }
 
+
+export const DisplayCountFilter = (limit) => {
+    console.log("Show only  " +limit+ "  Items")
+    return{
+        type : 'DISPLAY_COUNT_FILTER',
+        payload : limit
+    }
+}
+

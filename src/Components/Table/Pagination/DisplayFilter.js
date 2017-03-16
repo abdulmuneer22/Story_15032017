@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
-const Style = {
-
-
-}
+import * as actions from '../../../redux/actions'
+import {connect}  from 'react-redux'
 
 class DisplayFilter extends Component {
 
@@ -11,29 +9,28 @@ class DisplayFilter extends Component {
         return (
             <div style={{
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                alignItems : 'center'
             }}>
                 <div>
                     Display
                 </div>
 
-                <div style={{
-                    borderWidth : 1,
-                    borderStyle : 'solid',
-                    paddingLeft : 20,
-                    paddingRight : 20,
-                    borderRadius : 6,
-                    marginRight : 10,
-                    marginLeft : 10,
-                    justifyContent : 'center',
-                    display: 'flex',
-                    paddingTop : 5
-                }}> 
-                    <div>25</div>
-                    <i className="material-icons" style={{paddingTop : '0 !impotant'}}>arrow_drop_down</i>
+                <div>
+                    <select onChange={(event)=>{
+                        this.props.DisplayCountFilter(event.target.value)
+                        console.log(event.target.value)
+
+                        }}>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
                 </div>
-                
+
                 <div>items per page</div>
+
+                
 
             </div>
         );
@@ -41,5 +38,10 @@ class DisplayFilter extends Component {
 }
 
 
+const mapStateToProps = (state, ownProps) => {
+    return {
+        prop: state.prop
+    }
+}
+export default connect(mapStateToProps, actions)(DisplayFilter)
 
-export default DisplayFilter
